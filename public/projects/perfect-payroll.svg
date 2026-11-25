@@ -1,15 +1,94 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" role="img" aria-label="Perfect Payroll product showcase">
   <defs>
-    <linearGradient id="pp-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0f1f2d"/>
-      <stop offset="1" stop-color="#1a3248"/>
+    <linearGradient id="pp-bg" x1="120" y1="0" x2="680" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e8f2ff"/>
+      <stop offset="0.45" stop-color="#c9dcfb"/>
+      <stop offset="1" stop-color="#9ec0f4"/>
     </linearGradient>
+    <radialGradient id="pp-glow-a" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(620 120) scale(220)">
+      <stop stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pp-glow-b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(180 400) scale(200)">
+      <stop stop-color="#2563eb" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#2563eb" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pp-logo" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <filter id="pp-soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#1e3a5f" flood-opacity="0.12"/>
+    </filter>
   </defs>
+
   <rect width="800" height="500" fill="url(#pp-bg)"/>
-  <rect x="120" y="110" width="560" height="56" rx="12" fill="rgba(255,255,255,0.08)"/>
-  <rect x="120" y="190" width="420" height="18" rx="6" fill="rgba(255,255,255,0.12)"/>
-  <rect x="120" y="226" width="360" height="18" rx="6" fill="rgba(255,255,255,0.08)"/>
-  <rect x="120" y="300" width="200" height="44" rx="22" fill="#4da3ff" fill-opacity="0.9"/>
-  <circle cx="620" cy="320" r="72" fill="#4da3ff" fill-opacity="0.15"/>
-  <path d="M580 320 L610 350 L670 280" stroke="#8ec5ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect width="800" height="500" fill="url(#pp-glow-a)"/>
+  <rect width="800" height="500" fill="url(#pp-glow-b)"/>
+
+  <!-- Ambient sparkles -->
+  <g stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" opacity="0.35">
+    <path d="M698 78l2.2 6.2 6.2 2.2-6.2 2.2-2.2 6.2-2.2-6.2-6.2-2.2 6.2-2.2z" fill="none"/>
+    <path d="M88 92v5M90.5 94.5h-5" opacity="0.5"/>
+    <circle cx="52" cy="168" r="2" fill="#2563eb" stroke="none" opacity="0.4"/>
+    <circle cx="728" cy="388" r="2.5" fill="#2563eb" stroke="none" opacity="0.35"/>
+  </g>
+
+  <!-- Brand lockup -->
+  <rect x="48" y="44" width="40" height="40" rx="11" fill="url(#pp-logo)"/>
+  <g transform="translate(59 55)" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" transform="scale(0.85)"/>
+    <path d="M20 2v4M22 4h-4" transform="scale(0.85)"/>
+    <circle cx="3.4" cy="17" r="1.7" fill="#ffffff" stroke="none"/>
+  </g>
+  <text x="100" y="72" fill="#12141a" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="600" letter-spacing="-0.03em">Perfect Payroll</text>
+
+  <!-- Headline -->
+  <text x="48" y="138" fill="#12141a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="30" font-weight="600" letter-spacing="-0.04em">Complicated pay.</text>
+  <text x="48" y="174" fill="#12141a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="30" font-weight="600" letter-spacing="-0.04em">Simple payroll.</text>
+  <text x="48" y="208" fill="#3c4250" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" letter-spacing="-0.01em">Your pre-payroll assistant.</text>
+
+  <!-- Workflow -->
+  <g filter="url(#pp-soft)">
+    <rect x="48" y="232" width="292" height="52" rx="14" fill="#ffffff" fill-opacity="0.92" stroke="#d5dbe6" stroke-width="1"/>
+  </g>
+  <rect x="64" y="246" width="44" height="24" rx="7" fill="#f4f7fb" stroke="#e6e8ee"/>
+  <text x="72" y="262" fill="#3c4250" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600">QBT</text>
+  <text x="136" y="262" fill="#9ca3af" font-size="14">→</text>
+  <rect x="154" y="246" width="44" height="24" rx="7" fill="#2563eb"/>
+  <text x="162" y="262" fill="#ffffff" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600">PP</text>
+  <text x="218" y="262" fill="#9ca3af" font-size="14">→</text>
+  <rect x="236" y="246" width="44" height="24" rx="7" fill="#f4f7fb" stroke="#e6e8ee"/>
+  <text x="242" y="262" fill="#3c4250" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600">Pay</text>
+  <text x="64" y="294" fill="#6b7280" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12">Export · Review · Run</text>
+
+  <!-- Stat chip -->
+  <g filter="url(#pp-soft)">
+    <rect x="48" y="318" width="168" height="88" rx="16" fill="#ffffff" fill-opacity="0.94" stroke="#d5dbe6" stroke-width="1"/>
+  </g>
+  <text x="68" y="348" fill="#6b7280" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="500">Period bonuses</text>
+  <text x="68" y="382" fill="#12141a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="600" letter-spacing="-0.03em">$416.25</text>
+
+  <!-- Qualified chip -->
+  <rect x="232" y="358" width="108" height="48" rx="24" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+  <circle cx="256" cy="382" r="6" fill="#10b981"/>
+  <text x="272" y="387" fill="#047857" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">2 qualified</text>
+
+  <!-- Peel mascot -->
+  <g transform="translate(458 72) scale(1.42)">
+    <ellipse cx="120" cy="218" rx="72" ry="10" fill="#172b4c" opacity="0.1"/>
+    <path fill="#a0cffd" d="M 203.163 124.76 Q 204 128 204.578 131.351 Q 205.156 134.702 205.398 138.133 Q 205.64 141.564 205.482 145.024 Q 205.323 148.484 204.723 151.909 Q 204.122 155.333 203.063 158.65 Q 202.005 161.968 200.504 165.111 Q 199.004 168.254 197.102 171.168 Q 195.2 174.083 192.958 176.731 Q 190.717 179.379 188.209 181.746 Q 185.701 184.114 183 186.207 Q 180.3 188.3 177.474 190.142 Q 174.647 191.984 171.748 193.609 Q 168.848 195.233 165.909 196.677 Q 162.97 198.12 160.008 199.414 Q 157.046 200.707 154.063 201.87 Q 151.08 203.033 148.067 204.071 Q 145.054 205.109 142 206.012 Q 138.946 206.914 135.84 207.659 Q 132.735 208.404 129.575 208.961 Q 126.416 209.519 123.208 209.856 Q 120 210.194 116.759 210.283 Q 113.517 210.373 110.264 210.193 Q 107.01 210.013 103.771 209.554 Q 100.531 209.095 97.331 208.355 Q 94.131 207.616 90.995 206.605 Q 87.859 205.594 84.808 204.325 Q 81.757 203.056 78.808 201.544 Q 75.858 200.033 73.026 198.292 Q 70.194 196.551 67.495 194.593 Q 64.796 192.635 62.248 190.468 Q 59.7 188.3 57.325 185.929 Q 54.95 183.558 52.776 180.989 Q 50.601 178.421 48.657 175.666 Q 46.712 172.911 45.029 169.984 Q 43.345 167.058 41.951 163.982 Q 40.556 160.907 39.471 157.713 Q 38.386 154.518 37.621 151.239 Q 36.857 147.961 36.413 144.635 Q 35.969 141.309 35.834 137.972 Q 35.698 134.635 35.849 131.317 Q 36 128 36.41 124.727 Q 36.82 121.454 37.459 118.241 Q 38.099 115.028 38.942 111.885 Q 39.785 108.742 40.811 105.673 Q 41.837 102.603 43.035 99.61 Q 44.233 96.616 45.599 93.702 Q 46.966 90.787 48.505 87.959 Q 50.044 85.131 51.764 82.402 Q 53.484 79.673 55.393 77.062 Q 57.301 74.45 59.404 71.978 Q 61.506 69.506 63.801 67.197 Q 66.096 64.887 68.577 62.762 Q 71.058 60.637 73.71 58.713 Q 76.362 56.789 79.167 55.078 Q 81.973 53.367 84.911 51.875 Q 87.85 50.383 90.902 49.111 Q 93.954 47.839 97.102 46.788 Q 100.25 45.737 103.479 44.909 Q 106.709 44.082 110.005 43.486 Q 113.302 42.891 116.651 42.542 Q 120 42.194 123.383 42.115 Q 126.765 42.037 130.156 42.254 Q 133.546 42.472 136.91 43.014 Q 140.273 43.556 143.567 44.444 Q 146.861 45.331 150.036 46.577 Q 153.211 47.822 156.218 49.42 Q 159.224 51.018 162.017 52.948 Q 164.81 54.877 167.355 57.098 Q 169.9 59.318 172.18 61.777 Q 174.46 64.236 176.477 66.871 Q 178.494 69.506 180.271 72.256 Q 182.047 75.007 183.623 77.819 Q 185.198 80.631 186.621 83.467 Q 188.044 86.303 189.365 89.143 Q 190.685 91.984 191.946 94.83 Q 193.206 97.677 194.431 100.547 Q 195.656 103.418 196.845 106.342 Q 198.035 109.266 199.163 112.274 Q 200.292 115.283 201.309 118.402 Q 202.326 121.521 203.163 124.76 Z"/>
+    <ellipse cx="94" cy="122" rx="8" ry="11" fill="#172b4c"/>
+    <ellipse cx="146" cy="122" rx="8" ry="11" fill="#172b4c"/>
+    <path d="M-9 -2 Q0 7 9 -2" transform="translate(120 148)" stroke="#172b4c" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Peel chat bubble -->
+  <g filter="url(#pp-soft)">
+    <path d="M472 418h248a16 16 0 0 0 16-16V356a16 16 0 0 0-16-16H472a16 16 0 0 0-16 16v46a16 16 0 0 0 16 16z" fill="#ffffff" fill-opacity="0.95" stroke="#d5dbe6"/>
+    <path d="M508 418l-12 14v-14z" fill="#ffffff" stroke="#d5dbe6" stroke-linejoin="round"/>
+  </g>
+  <text x="492" y="384" fill="#12141a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="500" letter-spacing="-0.02em">Ready to review bonus requirements?</text>
+  <rect x="492" y="396" width="128" height="28" rx="8" fill="#e8f0fe"/>
+  <text x="504" y="415" fill="#2563eb" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600">Review requirements</text>
 </svg>
