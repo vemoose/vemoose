@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { KTX2Loader } from "three/examples/jsm/loaders/KTX2Loader.js";
 import { buildNeighborConnections } from "@/lib/spatial-hash";
 import { sampleParticlesFromMoose } from "@/lib/sample-moose-particles";
 
@@ -68,7 +69,14 @@ export function ParticleMoose({ className }: ParticleMooseProps) {
         const sculpture = new THREE.Group();
         scene.add(sculpture);
 
+        const ktx2Loader = new KTX2Loader()
+          .setTranscoderPath("/basis/")
+          .detectSupport(renderer);
         const loader = new GLTFLoader();
+        loader.setKTX2Loader(ktx2Loader);
+
+        disposeList.push(() => ktx2Loader.dispose());
+
         const gltf = await loader.loadAsync("/models/moose.glb");
         if (disposed) return;
 
@@ -122,7 +130,7 @@ export function ParticleMoose({ className }: ParticleMooseProps) {
         );
 
         const pointsMat = new THREE.PointsMaterial({
-          size: 0.015,
+          size: 0.022,
           vertexColors: true,
           transparent: true,
           opacity: 0.94,
@@ -194,8 +202,13 @@ export function ParticleMoose({ className }: ParticleMooseProps) {
           camera.updateProjectionMatrix();
         };
         resize();
+        const resizeObserver = new ResizeObserver(() => resize());
+        resizeObserver.observe(container);
         window.addEventListener("resize", resize);
-        disposeList.push(() => window.removeEventListener("resize", resize));
+        disposeList.push(() => {
+          resizeObserver.disconnect();
+          window.removeEventListener("resize", resize);
+        });
 
         const observer = new IntersectionObserver(
           ([entry]) => {
@@ -252,7 +265,7 @@ export function ParticleMoose({ className }: ParticleMooseProps) {
 
           parallaxX += (targetX - parallaxX) * 0.06;
           parallaxY += (targetY - parallaxY) * 0.06;
-          camera.position.set(parallaxX, 0.08 + parallaxY, 3.05);
+          camera.position.set(parallaxX, 0.06 + parallaxY, 3.35);
           camera.lookAt(0, 0.06, 0);
 
           frameCounter++;
@@ -296,7 +309,8 @@ export function ParticleMoose({ className }: ParticleMooseProps) {
         setReady(true);
         animate();
         disposeList.push(() => cancelAnimationFrame(frameId));
-      } catch {
+      } catch (error) {
+        console.error("ParticleMoose failed to initialize:", error);
         setFallback(true);
       }
     };

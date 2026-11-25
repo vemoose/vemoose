@@ -79,5 +79,11 @@ export function sampleParticlesFromMoose(
     if (written >= targetCount) break;
   }
 
+  if (written < Math.min(500, targetCount * 0.05)) {
+    throw new Error(
+      `Moose particle sampling produced too few points (${written}/${targetCount})`,
+    );
+  }
+
   return { positions, normals, count: written };
 }
