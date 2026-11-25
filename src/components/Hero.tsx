@@ -21,8 +21,8 @@ export function Hero() {
             <HeroCopy />
           </div>
 
-          <div className="relative flex w-full min-h-[320px] items-center justify-center md:min-h-[420px]">
-            <MooseSculptureLazy className="absolute inset-0 h-full min-h-[320px] w-full md:min-h-[420px]" />
+          <div className="hero-art min-w-0">
+            <MooseSculptureLazy />
           </div>
         </div>
 
