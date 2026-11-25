@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --page: #080c0a;
+  --hero: #0a100c;
+  --surface: #101612;
+  --elevated: #151e18;
+  --accent: #35f18a;
+  --accent-hover: #79ffa9;
+  --primary: #f5f7f5;
+  --secondary: #a4b2a8;
+  --muted: #798b80;
+  --border: rgba(255, 255, 255, 0.09);
+  --accent-border: rgba(53, 241, 138, 0.2);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-page: var(--page);
+  --color-hero: var(--hero);
+  --color-surface: var(--surface);
+  --color-elevated: var(--elevated);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent-border: var(--accent-border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --spacing-gutter: clamp(1.25rem, 4vw, 3rem);
+  --spacing-hero: clamp(1.5rem, 3vw, 3.5rem);
+  --spacing-section: clamp(2.25rem, 4vw, 3rem);
+  --max-width-content: 1240px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@utility text-body {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+@utility hero-heading {
+  font-size: clamp(2.75rem, 7vw, 4.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+  font-weight: 500;
+}
+
+@utility section-heading {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+  font-weight: 500;
+}
+
+@utility px-gutter {
+  padding-left: var(--spacing-gutter);
+  padding-right: var(--spacing-gutter);
+}
+
+@utility p-hero {
+  padding: var(--spacing-hero);
+}
+
+@utility py-section {
+  padding-top: var(--spacing-section);
+  padding-bottom: var(--spacing-section);
+}
+
+@utility max-w-content {
+  max-width: var(--max-width-content);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--page);
+  color: var(--primary);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
