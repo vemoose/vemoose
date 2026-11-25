@@ -65,7 +65,7 @@ export function ParticleMoose({ className }: ParticleMooseProps) {
 
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
-        camera.position.set(0, 0.06, 3.35);
+        camera.position.set(0, 0.02, 3.15);
 
         const sculpture = new THREE.Group();
         scene.add(sculpture);
@@ -274,8 +274,8 @@ export function ParticleMoose({ className }: ParticleMooseProps) {
 
           parallaxX += (targetX - parallaxX) * 0.06;
           parallaxY += (targetY - parallaxY) * 0.06;
-          camera.position.set(parallaxX, 0.06 + parallaxY, 3.35);
-          camera.lookAt(0, 0.06, 0);
+          camera.position.set(parallaxX, 0.02 + parallaxY, 3.15);
+          camera.lookAt(0, 0.02, 0);
 
           frameCounter++;
           if (!reducedMotion && frameCounter % 2 === 0) {
