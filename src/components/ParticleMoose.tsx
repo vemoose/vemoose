@@ -62,8 +62,8 @@ export function ParticleMoose({ className }: ParticleMooseProps) {
         });
 
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
-        camera.position.set(0, 0.08, 3.05);
+        const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
+        camera.position.set(0, 0.06, 3.35);
 
         const sculpture = new THREE.Group();
         scene.add(sculpture);
