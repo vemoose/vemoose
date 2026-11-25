@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { KTX2Loader } from "three/examples/jsm/loaders/KTX2Loader.js";
+import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module.js";
 import { buildNeighborConnections } from "@/lib/spatial-hash";
 import { sampleParticlesFromMoose } from "@/lib/sample-moose-particles";
 
@@ -72,8 +73,11 @@ export function ParticleMoose({ className }: ParticleMooseProps) {
         const ktx2Loader = new KTX2Loader()
           .setTranscoderPath("/basis/")
           .detectSupport(renderer);
+        await MeshoptDecoder.ready;
+
         const loader = new GLTFLoader();
         loader.setKTX2Loader(ktx2Loader);
+        loader.setMeshoptDecoder(MeshoptDecoder);
 
         disposeList.push(() => ktx2Loader.dispose());
 
@@ -81,6 +85,11 @@ export function ParticleMoose({ className }: ParticleMooseProps) {
         if (disposed) return;
 
         const sample = sampleParticlesFromMoose(gltf.scene, getParticleCount());
+        if (sample.debug) {
+          console.info("Moose particle sample", sample.debug, {
+            count: sample.count,
+          });
+        }
         const { positions, normals, count } = sample;
         const basePositions = new Float32Array(positions.slice(0, count * 3));
 
