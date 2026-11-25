@@ -7,10 +7,6 @@ export type Project = {
   category: string;
   status: ProjectStatus;
   url?: string;
-  artwork: {
-    src: string;
-    alt: string;
-  };
 };
 
 export const projects: Project[] = [
@@ -21,10 +17,6 @@ export const projects: Project[] = [
     category: "Productivity",
     status: "live",
     url: "https://payroll.vemoose.com",
-    artwork: {
-      src: "/projects/perfect-payroll.svg",
-      alt: "Perfect Payroll product artwork",
-    },
   },
   {
     slug: "card-and-board",
@@ -32,9 +24,5 @@ export const projects: Project[] = [
     description: "A digital playground for tabletop game creators.",
     category: "Creative tools",
     status: "in development",
-    artwork: {
-      src: "/projects/card-and-board.svg",
-      alt: "Card & Board product artwork",
-    },
   },
 ];
